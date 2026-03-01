@@ -7,7 +7,7 @@
     <meta name="description" content="Ember Beverage Co. — Natural energy, reimagined. Coming soon.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -16,11 +16,12 @@
         }
 
         :root {
-            --ember-orange: #E8591A;
-            --ember-gold: #F4A623;
-            --ember-dark: #2B2B2B;
-            --ember-charcoal: #141414;
-            --ember-smoke: #1E1E1E;
+            --ember-orange: #B43205;
+            --ember-mid: #E88A10;
+            --ember-gold: #FFD200;
+            --ember-dark: #1C201A;
+            --ember-charcoal: #141714;
+            --ember-smoke: #1E211C;
             --ember-ash: #8A8A8A;
             --ember-light: #F0ECE6;
         }
@@ -54,7 +55,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(232, 89, 26, 0.12) 0%, rgba(232, 89, 26, 0.03) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(180, 50, 5, 0.12) 0%, rgba(180, 50, 5, 0.03) 40%, transparent 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -66,7 +67,7 @@
             position: absolute;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(244, 166, 35, 0.08) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(255, 210, 0, 0.06) 0%, transparent 60%);
             top: 45%;
             left: 55%;
             transform: translate(-50%, -50%);
@@ -97,19 +98,33 @@
         }
 
         .brand-name {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 600;
-            font-size: clamp(2.2rem, 7vw, 4.5rem);
+            font-family: 'Cantarell', sans-serif;
+            font-weight: 700;
             text-transform: uppercase;
+            line-height: 1;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.5s forwards;
+        }
+
+        .brand-ember {
+            display: block;
+            font-size: clamp(5rem, 16vw, 12rem);
             letter-spacing: 0.02em;
-            line-height: 1.3;
-            padding-bottom: 0.1em;
-            background: linear-gradient(90deg, var(--ember-orange), var(--ember-gold));
+            background: linear-gradient(90deg, var(--ember-orange), var(--ember-mid), var(--ember-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            opacity: 0;
-            animation: fadeUp 1s ease-out 0.5s forwards;
+        }
+
+        .brand-sub {
+            display: block;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(0.85rem, 2.5vw, 1.35rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--ember-ash);
+            margin-top: 0.4rem;
         }
 
         .divider {
@@ -169,7 +184,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--ember-orange), var(--ember-gold), transparent);
+            background: linear-gradient(90deg, transparent, var(--ember-orange), var(--ember-mid), var(--ember-gold), transparent);
             z-index: 2;
             opacity: 0;
             animation: fadeUp 0.8s ease-out 0s forwards;
@@ -182,7 +197,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--ember-orange), var(--ember-gold), transparent);
+            background: linear-gradient(90deg, transparent, var(--ember-orange), var(--ember-mid), var(--ember-gold), transparent);
             z-index: 2;
             opacity: 0;
             animation: fadeUp 0.8s ease-out 1.4s forwards;
@@ -195,7 +210,10 @@
     <div class="grain"></div>
 
     <div class="container">
-        <h1 class="brand-name">Ember Beverage Co.</h1>
+        <h1 class="brand-name">
+            <span class="brand-ember">Ember</span>
+            <span class="brand-sub">Beverage Co.</span>
+        </h1>
         <div class="divider"></div>
         <p class="tagline">Coming Soon</p>
     </div>
